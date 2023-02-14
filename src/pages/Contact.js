@@ -1,92 +1,76 @@
 import {
   Box,
   Grid,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Link,
-  TablePagination,
-  Typography
+  Typography,
+  TextField,
+  Button
 } from '@mui/material';
-import {useState} from 'react';
-import {usersData} from '../components/data/usersData';
+import CallIcon from '@mui/icons-material/Call';
+import MailIcon from '@mui/icons-material/Mail';
+import PlaceIcon from '@mui/icons-material/Place';
 
 function Contact() {
-  const [userList, setUserList] = useState(usersData);
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: '25px' }}>
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant='body2' color='text.secondary'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <TableContainer component={Paper}>
-            <Table stickyHeader sx={{ minWidth: 650 }} size="small" aria-label='users table'>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell align='center'>Username</TableCell>
-                  <TableCell align='center'>Email</TableCell>
-                  <TableCell align='center'>Phone</TableCell>
-                  <TableCell align='center'>Company</TableCell>
-                  <TableCell align='center'>Details</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {userList
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map(user => {
-                  return (
-                    <TableRow
-                      key={user.id}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                    >
-                      
-                      <TableCell component='th' scope='row'>{user.name}</TableCell>
-                      <TableCell align='center'>{user.username}</TableCell>
-                      <TableCell align='center'>{user.email}</TableCell>
-                      <TableCell align='center'>{user.phone}</TableCell>
-                      <TableCell align='center'>{user.company.name}</TableCell>
-                      <TableCell align='center'>
-                        <Link href='#'>more...</Link>
-                      </TableCell>
-                    </TableRow>
-                  )
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25, 100]}
-            component='div'
-            count={userList.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Grid>
+    <Grid container spacing={2} sx={{marginTop: '10%'}}>
+      <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <Typography gutterBottom variant="h5" component="div">
+          GET IN TOUCH
+        </Typography>
       </Grid>
-    </Box>
+      <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <CallIcon />
+        <Typography variant="body1" color="text.secondary">
+          Phone +1234567890
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <MailIcon />
+        <Typography variant="body1" color="text.secondary">
+          Email: company@m
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <PlaceIcon />
+        <Typography variant="body1" color="text.secondary">
+          7 Mule Trail, Trinity,tx, 35862 United States
+        </Typography>
+      </Grid>
+
+      <Grid
+        item
+        xs={12}
+        sx={{ display: "flex", justifyContent: "center", marginTop: "25px" }}
+      >
+        <form style={{ display: "flex", marginLeft: "25px" }}>
+          <Grid item xs={6}>
+            <Box sx={{ width: 500, maxWidth: "100%" }}>
+              <TextField fullWidth label="Your Name" id="nameFullWidth" />
+            </Box>
+            <Box sx={{ width: 500, maxWidth: "100%" }}>
+              <TextField fullWidth label="Your Email" id="emailFullWidth" />
+            </Box>
+            <Box sx={{ width: 500, maxWidth: "100%" }}>
+              <TextField fullWidth label="Your Phone" id="phoneFullWidth" />
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box sx={{ width: 500, maxWidth: "100%" }}>
+              <TextField
+                rows={6}
+                fullWidth
+                multiline
+                label="Your Message"
+                id="phoneFullWidth"
+              />
+            </Box>
+          </Grid>
+        </form>
+      </Grid>
+      <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <Button variant='contained'>Send Message</Button>
+      </Grid>
+    </Grid>
   );
 }
 
