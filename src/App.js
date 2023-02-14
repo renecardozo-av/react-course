@@ -6,6 +6,7 @@ import Layout from './pages/Layout';
 import Home from './pages/Home/Home'
 import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
+import About from './pages/About';
 import NoPage from './pages/NoPage';
 
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='blogs' element={<Blogs />}/>
             <Route path='contact' element={<Contact />} />
             <Route path='*' element={<NoPage />}/>
+            <Route path='about' element={<About />}/>
           </Route>
         </Routes>
       </BrowserRouter>

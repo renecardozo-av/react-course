@@ -8,6 +8,10 @@ const initialState = [
     name: 'Home'
   },
   {
+    path: '/about',
+    name: 'About'
+  },
+  {
     path: '/blogs',
     name: 'Blogs'
   },{
