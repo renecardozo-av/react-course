@@ -1,6 +1,7 @@
 import AdbIcon from '@mui/icons-material/Adb';
 
 import './Navbar.scss';
+import navbarLogo from '../../assets/log-navbar.png';
 
 function Logo({hasLogo}) {
   return (
@@ -9,7 +10,7 @@ function Logo({hasLogo}) {
         (
           <div className='logo__container'>
             <div className='logo__image'>
-              Here comes the logo ico
+              <img src={navbarLogo} alt='logo' width={30}/>
             </div>
           </div>
         ) : (

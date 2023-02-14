@@ -23,7 +23,7 @@ const listImageCard = [
 ]
 function Home() {
   return(
-    <Grid container spacing={2} className='presentation' sx={{ marginTop: '10%' }}>
+    <Grid container spacing={2} className='presentation'>
       <Presentation />
       <VideoDemo />
       <CardsSection listImageCard={listImageCard}/>
