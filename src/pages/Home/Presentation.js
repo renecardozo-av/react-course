@@ -45,7 +45,7 @@ function Presentation() {
                   flexDirection: 'column-reverse',
                   justifyContent: 'flex-start',
                   width: '100%',
-                  height: '50vh',
+                  height: '40vh',
                   backgroundImage: `url(${item.image})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover',
