@@ -15,7 +15,7 @@ function CardsSection({listImageCard}) {
                   <CardMedia
                     component="img"
                     alt="green iguana"
-                    height="140"
+                    height="150"
                     image={listImageCard[0].name}
                   />
                 </Card>

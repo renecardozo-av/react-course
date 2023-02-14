@@ -33,23 +33,23 @@ function Presentation() {
     <Grid item xs={12}>
       <Carousel
         animation='slide'
-        fullHeightHover={true}
         NextIcon={<ArrowForwardIosIcon/>}
         PrevIcon={<ArrowBackIosIcon/>}
       >
         {
           items.map( (item, i) => (
             <Paper key={i} sx={{width: '100%'}}>
-              {/* <img src={item.image} alt={i} style={{width: '100%', height: '40vh'}}/> */}
               <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column-reverse',
                   justifyContent: 'flex-start',
                   width: '100%',
-                  height: '40vh',
-                  backgroundImage: `url(${item.image})`
-                  
+                  height: '50vh',
+                  backgroundImage: `url(${item.image})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
                 <h2>{item.name}</h2>
