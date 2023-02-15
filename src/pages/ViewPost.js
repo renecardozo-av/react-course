@@ -14,7 +14,7 @@ function ViewPost() {
 
   // STATES
   const {id} = useParams();
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState({});
 
   // INNER FUNCS
   const getPost = async () => {
@@ -39,6 +39,9 @@ function ViewPost() {
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {post.author}
+            </Typography>
+            <Typography gutterBottom variant="h6" component="div">
+              {post.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {post.text}
